@@ -4,17 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CrisisConnect — Aid. Awareness. Action.</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
   <link rel="stylesheet" href="css/main.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-  
-  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
 </head>
 <body>
 
   <nav class="nav">
-    <div class="nav-logo">Crisis<span>Connect</span></div>
+    <a href="index.html" class="nav-logo">Crisis<span>Connect</span></a>
     <div class="nav-links" id="navLinks">
       <a href="#map-section" onclick="track('nav_map')">Find Resources</a>
       <a href="donate.html" onclick="track('nav_donate')">Donate</a>
@@ -25,7 +24,6 @@
     <div class="nav-hamburger" onclick="toggleMenu()">&#9776;</div>
   </nav>
 
-  <!-- TICKER -->
   <div class="ticker-wrap">
     <div class="ticker-inner">
       <span class="ticker-item">12 million displaced in Sudan</span><span class="ticker-dot"></span>
@@ -36,7 +34,6 @@
       <span class="ticker-item">Haiti — 1.4 million displaced</span><span class="ticker-dot"></span>
       <span class="ticker-item">Afghanistan — girls facing deadly health risks</span><span class="ticker-dot"></span>
       <span class="ticker-item">Your help reaches people today</span><span class="ticker-dot"></span>
-      <!-- duplicate for seamless loop -->
       <span class="ticker-item">12 million displaced in Sudan</span><span class="ticker-dot"></span>
       <span class="ticker-item">No donation is too little</span><span class="ticker-dot"></span>
       <span class="ticker-item">Gaza — catastrophic humanitarian emergency</span><span class="ticker-dot"></span>
@@ -86,6 +83,23 @@
     <div id="map"></div>
   </section>
 
+  <section class="transparency-strip reveal">
+    <div class="transparency-inner">
+      <div class="trans-item">
+        <span class="trans-icon">🔒</span>
+        <div><strong>Zero funds held</strong><p>Donations go directly to NGO partners. We never touch your money.</p></div>
+      </div>
+      <div class="trans-item">
+        <span class="trans-icon">✅</span>
+        <div><strong>Verified NGOs only</strong><p>Every organization is independently rated and field-active.</p></div>
+      </div>
+      <div class="trans-item">
+        <span class="trans-icon">🚫</span>
+        <div><strong>No ads. No cuts.</strong><p>This platform is free, independent, and always will be.</p></div>
+      </div>
+    </div>
+  </section>
+
   <section class="donate-strip">
     <div class="strip-content">
       <h2>Your donation reaches people today. <span class="donate-heart">♥</span></h2>
@@ -102,43 +116,20 @@
     <a href="stories.html" class="btn btn-outline-dark" onclick="track('home_see_all_stories')">Read All Stories →</a>
   </section>
 
-  <!-- SUPPORT THE PLATFORM -->
-  <section class="support-section reveal" id="support">
-    <div class="support-inner">
-      <div class="section-label">Support This Platform</div>
-      <h2>No donation is too little.</h2>
-      <p>CrisisConnect costs nothing to use and takes zero cut from NGO donations. But running and growing this platform takes time and effort. If it helped you — or if you just believe in what we're doing — consider leaving a small tip. Every naira and every dollar keeps this mission alive.</p>
-      <div class="support-cards">
-        <div class="support-card">
-          <div class="support-card-icon">🏦</div>
-          <h3>Nigerian Bank Transfer</h3>
-          <p>Send directly to our account — no fees, instant.</p>
-          <span class="acct-num">0123456789</span>
-          <span class="acct-bank">GTBank · CrisisConnect</span>
-          <span style="font-size:0.78rem;color:var(--muted);display:block;margin-bottom:0.5rem">⚠️ Replace with your real account number</span>
-        </div>
-        <div class="support-card">
-          <div class="support-card-icon">☕</div>
-          <h3>Buy Me a Coffee</h3>
-          <p>For international supporters — quick, easy, any amount.</p>
-          <a href="https://buymeacoffee.com/YOUR_USERNAME" target="_blank" rel="noopener"
-             class="btn btn-gold" style="display:block;text-align:center;padding:0.65rem 1rem;text-decoration:none;font-size:0.9rem"
-             onclick="track('tip_buymeacoffee')">
-            ☕ Buy Me a Coffee →
-          </a>
-          <span style="font-size:0.75rem;color:var(--muted);display:block;margin-top:0.5rem">Replace YOUR_USERNAME with your ID</span>
-        </div>
-      </div>
-      <p class="support-note">Tips go toward platform maintenance, hosting, and keeping this resource free and independent.</p>
-    </div>
-  </section>
-
   <section class="about reveal" id="about">
     <div class="about-inner">
       <div class="section-label">About</div>
-      <h2>Built by people who care. For people who need it.</h2>
-      <p>CrisisConnect is an independent humanitarian platform. We don't take cuts from donations. We don't run ads. We connect people to help that already exists — making it visible, trusted, and easy to reach.</p>
-      <p>Every link we list is verified. Every NGO we feature has been reviewed for transparency and real-world impact.</p>
+      <h2>Built by someone who gives a damn.</h2>
+      <div class="founder-block">
+        <div class="founder-avatar">A</div>
+        <div class="founder-text">
+          <div class="founder-name">Adewale — Founder, CrisisConnect</div>
+          <div class="founder-location">📍 Nigeria</div>
+          <p>I built CrisisConnect because I believe that the gap between people who want to help and people who desperately need it is mostly an information problem. The right clinic, the right shelter, the right NGO — if people can find it, lives change. I'm a teenager with a laptop and a conviction that this matters. This platform is my answer to that conviction.</p>
+          <a href="contact.html" class="founder-contact" onclick="track('founder_contact')">Get in touch →</a>
+        </div>
+      </div>
+      <p style="margin-top:2rem;color:rgba(255,255,255,0.6);line-height:1.8;">CrisisConnect is an independent humanitarian platform. We take zero cuts from donations. We hold zero funds. We run zero ads. We connect people to help that already exists — making it visible, trusted, and easy to reach. Every NGO we list is verified. Every story we tell is real.</p>
     </div>
   </section>
 
@@ -149,9 +140,12 @@
         <a href="donate.html" onclick="track('footer_donate')">Donate</a>
         <a href="stories.html" onclick="track('footer_stories')">Stories</a>
         <a href="#map-section" onclick="track('footer_map')">Resources</a>
-        <a href="#about" onclick="track('footer_about')">About</a>
+        <a href="contact.html" onclick="track('footer_contact')">Contact</a>
+        <a href="privacy.html" onclick="track('footer_privacy')">Privacy Policy</a>
+        <a href="terms.html" onclick="track('footer_terms')">Terms</a>
+        <a href="disclaimer.html" onclick="track('footer_disclaimer')">Disclaimer</a>
       </div>
-      <p class="footer-note">© 2025 CrisisConnect. Not affiliated with any government or commercial entity.</p>
+      <p class="footer-note">© 2026 CrisisConnect. Built with purpose, not profit. Founded in Nigeria.</p>
     </div>
   </footer>
 

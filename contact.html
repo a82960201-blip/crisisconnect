@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — CrisisConnect</title>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/contact.css"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Crisis<span>Connect</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#map-section">Find Resources</a>
+      <a href="donate.html">Donate</a>
+      <a href="stories.html">Stories</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-inner">
+      <span class="ticker-item">No donation is too little</span><span class="ticker-dot"></span>
+      <span class="ticker-item">12 million displaced in Sudan</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Every connection saves a life</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Gaza — catastrophic humanitarian emergency</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Your help reaches people today</span><span class="ticker-dot"></span>
+      <span class="ticker-item">No donation is too little</span><span class="ticker-dot"></span>
+      <span class="ticker-item">12 million displaced in Sudan</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Every connection saves a life</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Gaza — catastrophic humanitarian emergency</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Your help reaches people today</span><span class="ticker-dot"></span>
+    </div>
+  </div>
+  <div class="page-hero">
+    <div class="section-label">Get In Touch</div>
+    <h1>We're here.<br/>Reach out.</h1>
+    <p>Have a question? Want to suggest a resource, report a broken link, or just tell us about a crisis we should spotlight? We want to hear from you.</p>
+  </div>
+
+  <section class="contact-section">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <div class="contact-block">
+          <div class="contact-icon">📱</div>
+          <div>
+            <div class="contact-label">WhatsApp / Call</div>
+            <a href="tel:+2349063674496" class="contact-value" onclick="track('contact_phone')">+234 906 367 4496</a>
+          </div>
+        </div>
+        <div class="contact-block">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <a href="mailto:a82960201@gmail.com" class="contact-value" onclick="track('contact_email')">a82960201@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-block">
+          <div class="contact-icon">🌍</div>
+          <div>
+            <div class="contact-label">Based In</div>
+            <div class="contact-value">Nigeria — serving the world</div>
+          </div>
+        </div>
+
+        <div class="contact-mission">
+          <h3>Why we do this</h3>
+          <p>CrisisConnect was built by someone who believes that information — finding the right clinic, the right shelter, the right organization — can literally save a life. We're not a corporation. We're not funded by anyone. We're just people who think the world could do better at connecting those who want to help with those who need it.</p>
+          <p>If you know of a resource that should be on our map, an NGO we haven't listed, or a story that deserves to be told — please reach out. This platform grows because of people like you.</p>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <h3>Send us a message</h3>
+        <form class="contact-form" onsubmit="handleForm(event)">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" id="formName" placeholder="e.g. Amina Hassan" required/>
+          </div>
+          <div class="form-group">
+            <label>Email or WhatsApp</label>
+            <input type="text" id="formContact" placeholder="How can we reach you?" required/>
+          </div>
+          <div class="form-group">
+            <label>What's this about?</label>
+            <select id="formType" onchange="track('contact_form_type_' + this.value)">
+              <option value="general">General message</option>
+              <option value="resource">Suggest a resource / NGO</option>
+              <option value="story">Share a story</option>
+              <option value="crisis">Report a crisis we missed</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Your message</label>
+            <textarea id="formMessage" placeholder="Tell us..." rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%">Send Message</button>
+        </form>
+        <div class="form-success" id="formSuccess" style="display:none">
+          <div class="success-icon">✓</div>
+          <h3>Message received.</h3>
+          <p>Thank you for reaching out. We'll get back to you as soon as possible.</p>
+        </div>
+        <p class="form-note">This form saves your message locally. For urgent matters, please contact us directly via phone or email above.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">Crisis<span>Connect</span></div>
+      <div class="footer-links">
+        <a href="donate.html">Donate</a>
+        <a href="stories.html">Stories</a>
+        <a href="index.html#map-section">Resources</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p class="footer-note">© 2026 CrisisConnect. Built with purpose, not profit.</p>
+    </div>
+  </footer>
+
+  <script src="js/analytics.js"></script>
+  <script>
+    function toggleMenu(){document.getElementById('navLinks').classList.toggle('open');}
+
+    function handleForm(e) {
+      e.preventDefault();
+      track('contact_form_submit');
+      // Save message locally
+      const messages = JSON.parse(localStorage.getItem('cc_messages') || '[]');
+      messages.push({
+        name: document.getElementById('formName').value,
+        contact: document.getElementById('formContact').value,
+        type: document.getElementById('formType').value,
+        message: document.getElementById('formMessage').value,
+        date: new Date().toISOString()
+      });
+      localStorage.setItem('cc_messages', JSON.stringify(messages));
+      document.querySelector('.contact-form').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

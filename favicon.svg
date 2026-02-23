@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#0d0d0d"/>
+  <!-- Globe -->
+  <circle cx="32" cy="32" r="20" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+  <ellipse cx="32" cy="32" rx="20" ry="9" fill="none" stroke="#c0392b" stroke-width="1.5" opacity="0.5"/>
+  <line x1="32" y1="12" x2="32" y2="52" stroke="#c0392b" stroke-width="1.5" opacity="0.5"/>
+  <line x1="12" y1="32" x2="52" y2="32" stroke="#c0392b" stroke-width="1.5" opacity="0.5"/>
+  <!-- Gold heart pulse -->
+  <path d="M32 41 C32 41 21 34.5 21 27.5 C21 23.5 24 21 27.5 22.5 C29.5 23.5 31 25 32 26.5 C33 25 34.5 23.5 36.5 22.5 C40 21 43 23.5 43 27.5 C43 34.5 32 41 32 41Z" fill="#c9a84c"/>
+</svg>

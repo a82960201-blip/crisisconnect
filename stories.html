@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stories — CrisisConnect</title>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Crisis<span>Connect</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#map-section">Find Resources</a>
+      <a href="donate.html">Donate</a>
+      <a href="stories.html" class="active">Stories</a>
+      <a href="index.html#about">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-inner">
+      <span class="ticker-item">No donation is too little</span><span class="ticker-dot"></span>
+      <span class="ticker-item">12 million displaced in Sudan</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Every connection saves a life</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Gaza — catastrophic humanitarian emergency</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Your help reaches people today</span><span class="ticker-dot"></span>
+      <span class="ticker-item">No donation is too little</span><span class="ticker-dot"></span>
+      <span class="ticker-item">12 million displaced in Sudan</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Every connection saves a life</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Gaza — catastrophic humanitarian emergency</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Your help reaches people today</span><span class="ticker-dot"></span>
+    </div>
+  </div>
+  <div class="page-hero">
+    <div class="section-label">Human Stories</div>
+    <h1>The faces behind the numbers.</h1>
+    <p>Every statistic hides a life. These are their words, their journeys, their resilience.</p>
+  </div>
+
+  <section class="stories-full" id="storiesFull"></section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">Crisis<span>Connect</span></div>
+      <p class="footer-note">© 2025 CrisisConnect. Not affiliated with any government or commercial entity.</p>
+    </div>
+  </footer>
+
+  <script src="js/analytics.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/stories.js"></script>
+  <script>function toggleMenu(){document.getElementById('navLinks').classList.toggle('open');}</script>
+</body>
+</html>

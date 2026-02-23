@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donate — CrisisConnect</title>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Crisis<span>Connect</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#map-section">Find Resources</a>
+      <a href="donate.html" class="active">Donate</a>
+      <a href="stories.html">Stories</a>
+      <a href="index.html#about">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-inner">
+      <span class="ticker-item">No donation is too little</span><span class="ticker-dot"></span>
+      <span class="ticker-item">12 million displaced in Sudan</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Every connection saves a life</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Gaza — catastrophic humanitarian emergency</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Your help reaches people today</span><span class="ticker-dot"></span>
+      <span class="ticker-item">No donation is too little</span><span class="ticker-dot"></span>
+      <span class="ticker-item">12 million displaced in Sudan</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Every connection saves a life</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Gaza — catastrophic humanitarian emergency</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Your help reaches people today</span><span class="ticker-dot"></span>
+    </div>
+  </div>
+  <div class="page-hero">
+    <div class="section-label">Verified NGOs</div>
+    <h1>Donate with confidence.</h1>
+    <p>Every organization below is independently verified for transparency, financial accountability, and real field presence. We link directly to their official donation pages — nothing passes through us.</p>
+    <div class="nodonate-callout">
+      <div class="nodonate-callout-icon">♥</div>
+      <div class="nodonate-callout-text">
+        <strong>No donation is too little.</strong>
+        $5 feeds a child for a week. $10 provides emergency shelter materials. $25 covers basic medical supplies for a family. Every amount matters — every single one.
+      </div>
+    </div>
+  </div>
+
+  <section class="ngo-section">
+    <div class="ngo-filter">
+      <button class="filter-btn active" onclick="filterNGO('all',this)">All</button>
+      <button class="filter-btn" onclick="filterNGO('refugees',this)">Refugees</button>
+      <button class="filter-btn" onclick="filterNGO('food',this)">Food</button>
+      <button class="filter-btn" onclick="filterNGO('health',this)">Health</button>
+      <button class="filter-btn" onclick="filterNGO('children',this)">Children</button>
+    </div>
+    <div class="ngo-grid" id="ngoGrid"></div>
+  </section>
+
+  <section class="support-section">
+    <div class="support-inner">
+      <div class="section-label">Support This Platform</div>
+      <h2>No donation is too little.</h2>
+      <p>CrisisConnect takes nothing from the NGO donations above. But if this platform helped you find somewhere to give — or if you believe in what we're building — a small tip goes a long way.</p>
+      <div class="support-cards">
+        <div class="support-card">
+          <div class="support-card-icon">🏦</div>
+          <h3>Nigerian Bank Transfer</h3>
+          <p>Send directly — no fees, instant.</p>
+          <span class="acct-num">0123456789</span>
+          <span class="acct-bank">GTBank · CrisisConnect</span>
+          <span style="font-size:0.75rem;color:var(--muted);display:block">⚠️ Replace with your account number</span>
+        </div>
+        <div class="support-card">
+          <div class="support-card-icon">☕</div>
+          <h3>Buy Me a Coffee</h3>
+          <p>For international supporters — any amount, instant.</p>
+          <a href="https://buymeacoffee.com/YOUR_USERNAME" target="_blank" rel="noopener"
+             class="btn btn-gold" style="display:block;text-align:center;padding:0.65rem 1rem;text-decoration:none;font-size:0.9rem"
+             onclick="track('tip_buymeacoffee_donate_page')">
+            ☕ Buy Me a Coffee →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">Crisis<span>Connect</span></div>
+      <p class="footer-note">© 2025 CrisisConnect. Not affiliated with any government or commercial entity.</p>
+    </div>
+  </footer>
+
+  <script src="js/analytics.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/donate.js"></script>
+  <script>function toggleMenu(){document.getElementById('navLinks').classList.toggle('open');}</script>
+</body>
+</html>

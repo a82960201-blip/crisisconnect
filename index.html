@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CrisisConnect — Aid. Awareness. Action.</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-logo">Crisis<span>Connect</span></div>
+    <div class="nav-links" id="navLinks">
+      <a href="#map-section" onclick="track('nav_map')">Find Resources</a>
+      <a href="donate.html" onclick="track('nav_donate')">Donate</a>
+      <a href="stories.html" onclick="track('nav_stories')">Stories</a>
+      <a href="#about" onclick="track('nav_about')">About</a>
+      <a href="contact.html" onclick="track('nav_contact')">Contact</a>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-inner">
+      <span class="ticker-item">12 million displaced in Sudan</span><span class="ticker-dot"></span>
+      <span class="ticker-item">No donation is too little</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Gaza — catastrophic humanitarian emergency</span><span class="ticker-dot"></span>
+      <span class="ticker-item">43 million affected in the Sahel</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Every connection saves a life</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Haiti — 1.4 million displaced</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Afghanistan — girls facing deadly health risks</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Your help reaches people today</span><span class="ticker-dot"></span>
+      <!-- duplicate for seamless loop -->
+      <span class="ticker-item">12 million displaced in Sudan</span><span class="ticker-dot"></span>
+      <span class="ticker-item">No donation is too little</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Gaza — catastrophic humanitarian emergency</span><span class="ticker-dot"></span>
+      <span class="ticker-item">43 million affected in the Sahel</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Every connection saves a life</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Haiti — 1.4 million displaced</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Afghanistan — girls facing deadly health risks</span><span class="ticker-dot"></span>
+      <span class="ticker-item">Your help reaches people today</span><span class="ticker-dot"></span>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Global Humanitarian Hub</div>
+      <h1 class="hero-title">Connect.<br/>Protect.<br/><span>Uplift.</span></h1>
+      <p class="hero-sub">One platform. Every crisis. Real people who need you — right now.</p>
+      <div class="hero-btns">
+        <a href="#map-section" class="btn btn-primary" onclick="track('hero_find_resources')">Find Resources</a>
+        <a href="donate.html" class="btn btn-outline" onclick="track('hero_donate')">Donate to Verified NGOs</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">117M</span><span class="stat-label">People Displaced</span></div>
+      <div class="stat"><span class="stat-num">42</span><span class="stat-label">Active Crises</span></div>
+      <div class="stat"><span class="stat-num">783M</span><span class="stat-label">Facing Hunger</span></div>
+    </div>
+  </section>
+
+  <section class="spotlight reveal">
+    <div class="section-label">Crisis Spotlight</div>
+    <div class="spotlight-cards stagger" id="spotlightCards"></div>
+  </section>
+
+  <section class="map-section reveal" id="map-section">
+    <div class="map-header">
+      <h2>Find Aid Resources</h2>
+      <p>Shelters, food banks, clinics, and education centers near active crisis zones.</p>
+      <div class="map-filters">
+        <button class="filter-btn active" data-type="all" onclick="filterMap('all',this)">All</button>
+        <button class="filter-btn" data-type="food" onclick="filterMap('food',this)">🍞 Food</button>
+        <button class="filter-btn" data-type="shelter" onclick="filterMap('shelter',this)">🏠 Shelter</button>
+        <button class="filter-btn" data-type="clinic" onclick="filterMap('clinic',this)">🏥 Clinic</button>
+        <button class="filter-btn" data-type="education" onclick="filterMap('education',this)">📚 Education</button>
+      </div>
+    </div>
+    <div id="map"></div>
+  </section>
+
+  <section class="donate-strip">
+    <div class="strip-content">
+      <h2>Your donation reaches people today. <span class="donate-heart">♥</span></h2>
+      <p>We link directly to verified NGOs — no middleman fees, no algorithms, no ads.</p>
+      <p style="font-size:1.2rem;font-weight:700;margin-bottom:1.5rem;opacity:1;letter-spacing:0.01em;">No donation is too little.</p>
+      <a href="donate.html" class="btn btn-white" onclick="track('strip_donate')">See Trusted Organizations →</a>
+    </div>
+  </section>
+
+  <section class="stories-preview reveal">
+    <div class="section-label">Human Stories</div>
+    <h2>Behind every statistic is a person.</h2>
+    <div class="story-cards stagger" id="storyCards"></div>
+    <a href="stories.html" class="btn btn-outline-dark" onclick="track('home_see_all_stories')">Read All Stories →</a>
+  </section>
+
+  <!-- SUPPORT THE PLATFORM -->
+  <section class="support-section reveal" id="support">
+    <div class="support-inner">
+      <div class="section-label">Support This Platform</div>
+      <h2>No donation is too little.</h2>
+      <p>CrisisConnect costs nothing to use and takes zero cut from NGO donations. But running and growing this platform takes time and effort. If it helped you — or if you just believe in what we're doing — consider leaving a small tip. Every naira and every dollar keeps this mission alive.</p>
+      <div class="support-cards">
+        <div class="support-card">
+          <div class="support-card-icon">🏦</div>
+          <h3>Nigerian Bank Transfer</h3>
+          <p>Send directly to our account — no fees, instant.</p>
+          <span class="acct-num">0123456789</span>
+          <span class="acct-bank">GTBank · CrisisConnect</span>
+          <span style="font-size:0.78rem;color:var(--muted);display:block;margin-bottom:0.5rem">⚠️ Replace with your real account number</span>
+        </div>
+        <div class="support-card">
+          <div class="support-card-icon">☕</div>
+          <h3>Buy Me a Coffee</h3>
+          <p>For international supporters — quick, easy, any amount.</p>
+          <a href="https://buymeacoffee.com/YOUR_USERNAME" target="_blank" rel="noopener"
+             class="btn btn-gold" style="display:block;text-align:center;padding:0.65rem 1rem;text-decoration:none;font-size:0.9rem"
+             onclick="track('tip_buymeacoffee')">
+            ☕ Buy Me a Coffee →
+          </a>
+          <span style="font-size:0.75rem;color:var(--muted);display:block;margin-top:0.5rem">Replace YOUR_USERNAME with your ID</span>
+        </div>
+      </div>
+      <p class="support-note">Tips go toward platform maintenance, hosting, and keeping this resource free and independent.</p>
+    </div>
+  </section>
+
+  <section class="about reveal" id="about">
+    <div class="about-inner">
+      <div class="section-label">About</div>
+      <h2>Built by people who care. For people who need it.</h2>
+      <p>CrisisConnect is an independent humanitarian platform. We don't take cuts from donations. We don't run ads. We connect people to help that already exists — making it visible, trusted, and easy to reach.</p>
+      <p>Every link we list is verified. Every NGO we feature has been reviewed for transparency and real-world impact.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">Crisis<span>Connect</span></div>
+      <div class="footer-links">
+        <a href="donate.html" onclick="track('footer_donate')">Donate</a>
+        <a href="stories.html" onclick="track('footer_stories')">Stories</a>
+        <a href="#map-section" onclick="track('footer_map')">Resources</a>
+        <a href="#about" onclick="track('footer_about')">About</a>
+      </div>
+      <p class="footer-note">© 2025 CrisisConnect. Not affiliated with any government or commercial entity.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin — CrisisConnect</title>
+  <link rel="stylesheet" href="../css/admin.css"/>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=DM+Mono&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+</head>
+<body class="admin-body">
+
+  <!-- LOGIN -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-box">
+      <div class="login-logo">Crisis<span>Connect</span></div>
+      <p class="login-sub">Admin Panel — Restricted Access</p>
+      <input type="password" id="loginInput" placeholder="Enter access code" class="login-input"/>
+      <button class="login-btn" onclick="doLogin()">Enter</button>
+      <p class="login-error" id="loginError"></p>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="dashboard" id="dashboard" style="display:none">
+    <aside class="sidebar">
+      <div class="sidebar-logo">Crisis<span>Connect</span></div>
+      <nav class="sidebar-nav">
+        <a href="#" class="sidebar-link active" onclick="showTab('overview',this)">📊 Overview</a>
+        <a href="#" class="sidebar-link" onclick="showTab('clicks',this)">🔗 Link Clicks</a>
+        <a href="#" class="sidebar-link" onclick="showTab('sessions',this)">👥 Sessions</a>
+        <a href="#" class="sidebar-link" onclick="showTab('pages',this)">📄 Pages</a>
+        <a href="#" class="sidebar-link" onclick="showTab('messages',this)">✉️ Messages</a>
+      </nav>
+      <div class="sidebar-divider"></div>
+      <a href="../index.html" class="sidebar-link sidebar-external" target="_blank">🌐 View Site →</a>
+      <button class="logout-btn" onclick="logout()">Log Out</button>
+    </aside>
+
+    <main class="dash-main">
+      <div class="dash-header">
+        <div>
+          <h1 id="tabTitle">Overview</h1>
+          <div class="dash-date" id="dashDate"></div>
+        </div>
+        <div class="dash-mission-badge">
+          🌍 Saving lives — one connection at a time
+        </div>
+      </div>
+
+      <!-- MISSION BANNER -->
+      <div class="mission-banner" id="missionBanner">
+        <div class="mission-banner-inner">
+          <div class="mission-icon">🤝</div>
+          <div>
+            <div class="mission-title">Your platform is making a difference.</div>
+            <div class="mission-text">Every visit to CrisisConnect is a person who cared enough to look. Every click on a donate button is someone choosing to act. In 2026, over 204 million people live under armed groups — beyond the reach of state institutions. You built something that reaches toward them. Keep going.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OVERVIEW TAB -->
+      <div class="tab-content active" id="tab-overview">
+        <div class="kpi-row" id="kpiRow"></div>
+        <div class="charts-row">
+          <div class="chart-card">
+            <h3>Sessions Over Time</h3>
+            <canvas id="sessionChart"></canvas>
+          </div>
+          <div class="chart-card">
+            <h3>Top Clicked Links</h3>
+            <canvas id="clickChart"></canvas>
+          </div>
+        </div>
+        <div class="chart-card" style="margin-top:1.5rem">
+          <h3>Page Views Breakdown</h3>
+          <canvas id="pageChart" style="max-height:200px"></canvas>
+        </div>
+      </div>
+
+      <!-- CLICKS TAB -->
+      <div class="tab-content" id="tab-clicks">
+        <div class="table-card">
+          <h3>All Link Clicks & Actions Tracked</h3>
+          <table class="data-table">
+            <thead><tr><th>Action</th><th>Clicks</th><th>Last Clicked</th></tr></thead>
+            <tbody id="clicksBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SESSIONS TAB -->
+      <div class="tab-content" id="tab-sessions">
+        <div class="table-card">
+          <h3>Visitor Sessions</h3>
+          <table class="data-table">
+            <thead><tr><th>Session ID</th><th>Date & Time</th><th>Pages Visited</th><th>Duration</th></tr></thead>
+            <tbody id="sessionsBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PAGES TAB -->
+      <div class="tab-content" id="tab-pages">
+        <div class="table-card">
+          <h3>Page Views</h3>
+          <table class="data-table">
+            <thead><tr><th>Page</th><th>Views</th></tr></thead>
+            <tbody id="pagesBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- MESSAGES TAB -->
+      <div class="tab-content" id="tab-messages">
+        <div class="table-card">
+          <h3>Contact Form Messages</h3>
+          <div id="messagesList"></div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../js/analytics.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>
